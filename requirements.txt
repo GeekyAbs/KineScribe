@@ -1,0 +1,10 @@
+ultralytics
+torch
+torchvision 
+opencv-python
+pandas
+google-genai
+numpy
+Pillow
+google.generativeai
+dotenv
