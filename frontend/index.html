@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KineScribe — AI-Powered Fall Detection</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="glow">Kine</span><span>Scribe</span>
+        <small class="version">v1.2.0 • AI Sentinel</small>
+      </div>
+      <nav>
+        <a href="#" class="nav-link">Home</a>
+        <a href="https://github.com/GeekyAbs/KineScribe" class="nav-link">GitHub</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Fall Detection Made Smarter</h1>
+      <p class="subtitle">Upload media → AI analyzes posture & context → <strong>Telegram alert on confirmed fall</strong></p>
+    </section>
+
+    <!-- Upload Panel -->
+    <section class="upload-panel">
+      <div class="card glow-border">
+        <h2><i class="fas fa-upload"></i> Upload Media for Analysis</h2>
+
+        <div class="input-group">
+          <label for="media-input">Media File (Image/Video)</label>
+          <div class="file-upload-wrapper">
+            <input type="file" id="media-input" accept="image/*,video/*" hidden />
+            <button class="btn btn-file" onclick="document.getElementById('media-input').click()">
+              <i class="fas fa-folder-open"></i> Choose File
+            </button>
+            <span id="file-name" class="file-name">No file selected</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="telegram-id">Telegram Chat ID</label>
+          <div class="input-with-icon">
+            <i class="fab fa-telegram-plane"></i>
+            <input type="text" id="telegram-id" placeholder="e.g., 123456789" />
+          </div>
+        </div>
+
+        <button id="analyze-btn" class="btn btn-primary btn-glow" disabled>
+          <i class="fas fa-cogs"></i> Analyze & Process
+        </button>
+      </div>
+
+      <!-- Preview & Status -->
+      <div class="preview-card card glow-border">
+        <h3>Live Preview <span class="status-badge idle">Idle</span></h3>
+        <div class="preview-area">
+          <div id="preview-placeholder" class="placeholder-text">
+            <i class="fas fa-video fa-2x"></i>
+            <p>Preview will appear here</p>
+          </div>
+          <img id="preview-img" src="" alt="Preview" style="display: none;" />
+          <video id="preview-vid" controls style="display: none;"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processing Pipeline -->
+    <section class="pipeline">
+      <h2>AI Processing Pipeline</h2>
+      <div class="pipeline-steps">
+        <div class="step" id="step-1">
+          <div class="step-icon"><i class="fas fa-brain"></i></div>
+          <div class="step-label">YOLOv8 Fall Detection</div>
+          <div class="step-status">—</div>
+        </div>
+        <div class="connector"></div>
+        <div class="step" id="step-2">
+          <div class="step-icon"><i class="fas fa-robot"></i></div>
+          <div class="step-label">Gemini Context Analysis</div>
+          <div class="step-status">—</div>
+        </div>
+        <div class="connector"></div>
+        <div class="step" id="step-3">
+          <div class="step-icon"><i class="fab fa-telegram"></i></div>
+          <div class="step-label">Telegram Alert</div>
+          <div class="step-status">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results & Log -->
+    <section class="results">
+      <div class="card log-card glow-border">
+        <h3>System Log <button id="clear-log" class="btn-sm">Clear</button></h3>
+        <div id="log-output" class="log-output">
+          <div class="log-entry info">✅ System initialized. Awaiting input.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>KineScribe © 2025 — Made by <strong>Abesh Chakraborty</strong></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

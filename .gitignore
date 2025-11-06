@@ -1,0 +1,14 @@
+# Ignore the Python virtual environment
+.venv/
+
+# Ignore all .env files in every folder
+**/.env
+
+# Ignore VS Code editor settings
+.vscode/
+
+# Ignore large model files
+*.pt
+
+# Ignore Python cache files
+__pycache__/
