@@ -98,6 +98,40 @@ cd kinescribe
 2. **Generate Pseudo-Labels** (optional): Use `FallDetection_PseudoLabelling.ipynb` to create additional training data
 3. **Test LLM Integration**: Explore `FallDetection_LLM_Inference.ipynb` to understand the verification approach
 
+### Run the KineScribe Frontend
+
+KineScribe ships with a Streamlit frontend for quick testing.
+
+1) Install dependencies (Python 3.9–3.11 recommended):
+```bash
+pip install -r requirements.txt
+```
+
+2) Ensure your trained YOLO weights file exists (default expected at `fall_yolov8n_35epochs.pt`).
+
+3) Provide credentials (either set environment variables or paste in the UI):
+```bash
+set GEMINI_API_KEY=your_gemini_key              # Windows PowerShell: $env:GEMINI_API_KEY="..."
+set TELEGRAM_BOT_TOKEN=your_bot_token          # optional if you plan to send alerts
+set TELEGRAM_CHAT_ID=123456789                 # optional default chat id
+```
+
+4) Launch the app:
+```bash
+streamlit run kinescribe_app.py
+```
+
+5) In the browser UI:
+- Upload a short test video (5–15s works best)
+- Confirm the YOLO weights path (defaults to `fall_yolov8n_35epochs.pt`)
+- Paste your Gemini API key
+- Optionally paste your Telegram Bot Token and Chat/User ID to receive alerts
+- Click “Run Detection” and monitor the live log
+
+Notes:
+- A Telegram alert is sent only when the LLM confirms a fall with ≥ 80% confidence.
+- Cooldown between LLM calls is 10s to control API usage.
+
 ## 🔬 Technical Approach
 
 ### Edge Detection

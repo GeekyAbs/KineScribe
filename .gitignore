@@ -1,14 +1,29 @@
-# Ignore the Python virtual environment
-.venv/
+Ignore all environment variable files
 
-# Ignore all .env files in every folder
 **/.env
 
-# Ignore VS Code editor settings
+Ignore the models directory
+
+models/
+
+Python virtual environments
+
+.venv/
+venv/
+
+Python cache and compiled files
+
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+Editor-specific files
+
 .vscode/
+.idea/
 
-# Ignore large model files
-**/.pt
+OS-specific files
 
-# Ignore Python cache files
-__pycache__/
+.DS_Store
+Thumbs.db

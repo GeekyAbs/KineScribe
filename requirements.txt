@@ -8,3 +8,5 @@ numpy
 Pillow
 google.generativeai
 dotenv
+streamlit
+requests
