@@ -8,7 +8,7 @@
 .vscode/
 
 # Ignore large model files
-*.pt
+**/.pt
 
 # Ignore Python cache files
 __pycache__/
