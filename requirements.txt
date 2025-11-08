@@ -1,10 +1,8 @@
-ultralytics
-torch
-torchvision 
+google-generativeai
+requests
 opencv-python
-pandas
-google-genai
-numpy
+numpy<2
 Pillow
-google.generativeai
-dotenv
+python-dotenv
+tflite-runtime
+picamera2
